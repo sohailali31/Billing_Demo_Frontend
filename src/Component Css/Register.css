@@ -1,0 +1,138 @@
+/* Register Page Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Arial', sans-serif;
+}
+
+body {
+  background-color: #f4f4f9;
+  color: #333;
+}
+
+/* Register Container */
+.register-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f4f4f9;
+}
+
+.register-form {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+}
+
+.register-form h2 {
+  font-size: 2rem;
+  color: #2a3d66;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Input Fields */
+.input-group {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 8px;
+  background-color: #f9f9f9;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 1rem;
+}
+
+.input-group .input-icon {
+  color: #2a3d66;
+  font-size: 1.2rem;
+  margin-right: 10px;
+}
+
+/* Register Button */
+.register-button {
+  width: 100%;
+  padding: 10px;
+  background-color: #2980b9;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.register-button:hover {
+  background-color: #1f5b89;
+}
+
+/* Link to Login */
+.redirect-link {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 0.9rem;
+}
+
+.redirect-link .login-link {
+  color: #2980b9;
+  text-decoration: none;
+}
+
+.redirect-link .login-link:hover {
+  text-decoration: underline;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .register-form {
+    width: 80%;
+    padding: 20px;
+  }
+
+  .register-form h2 {
+    font-size: 1.8rem;
+  }
+
+  .input-group input {
+    font-size: 1rem;
+  }
+
+  .register-button {
+    font-size: 1.1rem;
+  }
+}
+
+/* Notification Popup */
+.notification-popup {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: white;  /* Green color */
+  color: green;
+  padding: 15px;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-weight: bold;
+  z-index: 9999;
+  opacity: 1;
+  transition: opacity 0.5s ease-out;
+}
+
+.notification-popup.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
