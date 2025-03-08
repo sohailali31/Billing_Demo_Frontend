@@ -13,7 +13,7 @@ function Register() {
     const [notificationMessage, setNotificationMessage] = useState('');  
 
     const handleRegister = () => {
-        axios.post('http://localhost:8363/api/register', { username, email, password, name })
+        axios.post('http://localhost:9696/api/register', { username, email, password, name })
             .then(response => {
                 setNotificationMessage('Registration successful');
                 setShowNotification(true);
@@ -97,9 +97,3 @@ function Register() {
 }
 
 export default Register;
-
-
-
-
-
-

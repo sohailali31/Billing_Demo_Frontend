@@ -10,17 +10,21 @@ function Login() {
     const navigate = useNavigate();
 
     const handleLogin = () => {
-        axios.post(`http://localhost:8363/api/login?email=${email}&password=${password}`)
+        axios.post('http://localhost:9696/api/login', { email, password })
             .then(response => {
-                if (response.data) {
-                    // Navigate to welcome page with username from the response
-                    navigate(`/welcome/${response.data.username}`);
+                if (response.status === 200) {
+                    const user = response.data;
+                    navigate(`/welcome/${user.username}`);
                 } else {
                     alert('Invalid credentials');
                 }
             })
             .catch(error => {
-                alert('Login failed');
+                if (error.response && error.response.status === 401) {
+                    alert('Invalid email or password');
+                } else {
+                    alert('Login failed. Please try again.');
+                }
             });
     };
 
@@ -35,6 +39,7 @@ function Login() {
                         placeholder="Email"
                         onChange={(e) => setEmail(e.target.value)}
                         value={email}
+                        required
                     />
                 </div>
                 <div className="input-group">
@@ -44,11 +49,12 @@ function Login() {
                         placeholder="Password"
                         onChange={(e) => setPassword(e.target.value)}
                         value={password}
+                        required
                     />
                 </div>
                 <button className="login-button" onClick={handleLogin}>Login</button>
                 <p className="redirect-link">
-                    Don't have an account? <a href="/register/bellarybilling+550+software&kk$" className="register-link">Register</a>
+                    Don't have an account? <a href="/register" className="register-link">Register</a>
                 </p>
             </div>
         </div>
