@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useParams,useNavigate } from 'react-router-dom';
-import '../Component Css/Welcome.css';
+import "../Component Css/welcome.css";
 import logo from '../assets/images/logoooo12345.jpg';
 
 
